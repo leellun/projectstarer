@@ -15,6 +15,7 @@ public final class MD5 {
             byte[] bytes = strStr.getBytes();
             MessageDigest digest = MessageDigest.getInstance("MD5");
             digest.update(bytes);
+            bytes=digest.digest();
             char[] chars = new char[bytes.length * 2];
             for (int i = 0; i < bytes.length; i++) {
                 chars[2 * i] = hexChars[bytes[i] >>> 4 & 0xf];
